@@ -15,7 +15,7 @@ public class Primes {
         }
 
         int counter = 0;
-        // First sentence print
+        
         System.out.println("Prime numbers up to " + N + ":");
         
         for (int m = 2; m <= N; m++) {
@@ -25,7 +25,7 @@ public class Primes {
             }
         }
 
-        // Percentage calculation as per the range
+        
         double percentage = (counter * 100.0) / (N);
         System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)\n", counter, N, percentage);
     }
