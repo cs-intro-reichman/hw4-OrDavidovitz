@@ -2,7 +2,7 @@ public class Primes {
     public static void main(String[] args) {
         System.out.println("");
         final int N = Integer.parseInt(args[0]);
-        System.out.println("Prime numbers out to " + N + ":");
+        System.out.println("Prime numbers up to " + N + ":");
         boolean[] prime = new boolean[N+1];
         for (int i = 2; i < prime.length; i++) {
             prime[i] = true;
