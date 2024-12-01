@@ -31,13 +31,14 @@ public class Primes {
         
         double counter = 0;
         for (int m = 0; m < prime.length; m++) {
-            if (prime[m] == true) {
+            if (prime[m]) {
                 System.out.println(m);
                 counter++;
             }
         }
         
-        double percentage = (counter * 100) / (N - 1);  
-        System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)\n", (int) counter, N, percentage); 
+        // Calculate the percentage correctly
+        double percentage = (counter * 100) / (N - 1);  // Percentage calculation: total primes / (N-1) * 100
+        System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)\n", (int) counter, N, percentage);
     }
 }
