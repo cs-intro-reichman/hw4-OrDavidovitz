@@ -26,7 +26,7 @@ public class Primes {
         }
 
         // Percentage calculation as per the range
-        double percentage = (counter * 100.0) / (N - 1);
+        double percentage = (counter * 100.0) / (N);
         System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)\n", counter, N, percentage);
     }
 }
