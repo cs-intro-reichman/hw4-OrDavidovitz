@@ -14,13 +14,59 @@ public class KeywordsDetector {
             "Effective presentations must be clear, concise, and humble"
         };
         // Some keywords that typically signal bullshit contents in business presentations 
-        String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
+        String[] keywords = { "synergy", "disrupt", "leverage", "Paradigm", "transform" };
         detectAndPrint(sentences, keywords);
     }
 
+    public static String lowerCase(String str) {
+        String newString = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) >= 65 && str.charAt(i) <= 90) {
+                newString += (char) ((str.charAt(i)) + 32);
+            } else {
+                newString += (char) str.charAt(i);
+            }
+        }
+        return newString;
+    }
+
+    public static boolean contains(String str1, String str2) {
+        if (str2.length() == 0) {
+            return true;
+        }
+
+        if (str1.length() < str2.length()) {
+            return false;
+        }
+
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            boolean found = true;
+
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i + j) != str2.charAt(j)) {
+                    found = false;
+                    break;
+                }
+            }
+
+            if (found) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     // Iterates through all the sentences.
-    // If a sentence contains one or more of the kewords, prints it.
+    // If a sentence contains one or more of the keywords, prints the sentence.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        for (int i = 0; i < sentences.length; i++) {
+            for (int j = 0; j < keywords.length; j++) {
+                if (contains(lowerCase(sentences[i]), lowerCase(keywords[j]))) {
+                    System.out.println(sentences[i]);
+                    break;  
+                }
+            }
+        }
     }
 }
